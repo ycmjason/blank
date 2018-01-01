@@ -1,6 +1,6 @@
 <template>
   <div>
-    Header!
+    <h1>Blank</h1>
   </div>
 </template>
 
@@ -8,4 +8,6 @@
 export default { }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import '../styles/config.scss';
+</style>

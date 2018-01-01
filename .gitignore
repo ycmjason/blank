@@ -1,5 +1,4 @@
-# created by gitignorer
-# profile used: node
+*.sketch
 *.sw*
 .DS_Store
 node_modules

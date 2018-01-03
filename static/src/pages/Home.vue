@@ -1,13 +1,23 @@
 <template>
   <main>
-    <input type="text" placeholder="Object 1">
-    <input type="text" placeholder="Object 2">
-    <button class="primary">Start game!</button>
+    <input type="text" placeholder="Object 1" v-model="objects[0]">
+    <input type="text" placeholder="Object 2" v-model="objects[1]">
+    <button class="primary" @click="start()">Start game!</button>
   </main>
 </template>
 
 <script>
-export default { }
+export default {
+  data(){
+    return {
+      objects: []
+    };
+  },
+  methods: {
+    start(){
+    }
+  }
+}
 </script>
 
 <style scoped>

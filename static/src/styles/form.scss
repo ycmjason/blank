@@ -1,0 +1,43 @@
+@import './config.scss';
+
+$button-lighten-amount: 5%;
+
+button,
+input,
+select,
+textarea {
+  font-family: $font-family-primary;
+  outline: none;
+  margin-bottom: $core-margin;
+  max-width: 100%;
+  border-radius: $core-border-radius;
+}
+
+input {
+  &[type='text'] {
+    padding: $core-padding;
+    border: $core-border;
+    &:focus {
+      border-color: $color-highlight;
+    }
+  }
+}
+
+button {
+  transition: background $core-transition-duration;
+  text-transform: uppercase;
+  font-family: $font-family-secondary;
+  font-weight: bold;
+  padding: $core-padding (2 * $core-padding);
+  border: $core-border;
+  cursor: pointer;
+
+  &.primary {
+    background: $color-primary;
+
+    &:hover {
+      background: lighten($color-primary, $button-lighten-amount);
+    }
+  }
+
+}

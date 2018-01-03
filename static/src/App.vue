@@ -1,6 +1,9 @@
 <template>
-  <div class="container">
-    <router-view></router-view>
+  <div>
+    <b-header></b-header>
+    <section class="container">
+      <router-view></router-view>
+    </section>
   </div>
 </template>
 
@@ -12,10 +15,14 @@ export default {
 
 <style lang="scss">
 @import './styles/config.scss';
+@import './styles/form.scss';
 
 html {
   box-sizing: border-box;
   font-family: $font-family-primary;
+  font-size: 18px;
+  background: $color-background;
+  color: $color-foreground;
 }
 
 *, *:before, *:after {

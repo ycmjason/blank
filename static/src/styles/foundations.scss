@@ -1,0 +1,14 @@
+.container {
+  width: 1200px;
+  max-width: 100vw;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+a {
+  color: $color-tertiary;
+  text-decoration: none;
+  &:hover {
+    color: lighten($color-tertiary, 15%);
+  }
+}

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { flatten, pickRandom, repeat, shuffle } from '@/utils/array';
+import { flatten, pickRandom, repeat, range, shuffle } from '@/utils/array';
 
 Vue.use(Vuex);
 

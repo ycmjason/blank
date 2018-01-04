@@ -3,16 +3,18 @@ $color-secondary: #B6A39E;
 $color-tertiary: #726E75;
 $color-foreground: #000000;
 $color-background: #ffffff;
-$color-highlight: #5ca4e2;
+$color-highlight: darken($color-primary, 40%);
+$color-disabled: #d6d6d6;
 
 $font-family-primary: 'Quicksand', sans-serif;
 $font-family-secondary: 'Cinzel', serif;
+$core-font-size: 18px;
 
 $core-padding: .6rem;
 $core-margin: 1rem;
 
 $core-border-width: 1px;
-$core-border-color: darken($color-secondary, 30%);
+$core-border-color: $color-primary;
 $core-border-style: solid;
 $core-border-radius: 5px;
 $core-border: $core-border-width $core-border-style $core-border-color;

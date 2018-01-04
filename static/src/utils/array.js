@@ -3,7 +3,8 @@ export const repeat = (val, n) => {
   return (new Array(n)).fill(val);
 };
 
-export const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
+import shuffle from 'lodash.shuffle';
+export { shuffle };
 
 export const flatten = (xs) => {
   if(xs.length === 0) return [];
@@ -14,4 +15,4 @@ export const flatten = (xs) => {
 
 export const pickRandom = (xs) => xs[Math.floor(Math.random() * xs.length)];
 
-export const range = (start, end) => (new Array(end - start)).fill(0).map((_, i) => i + start);
+export const range = (start, end) => (new Array(end - start + 1)).fill(0).map((_, i) => i + start);

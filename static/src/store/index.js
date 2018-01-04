@@ -19,8 +19,8 @@ const mutations = {
 
 const actions = {
   startGame({ state, commit, dispatch }, { objects, player_count }) {
-    const blank_count = pickRandom(range(1, Math.floor(player_count / 2)));
-    commit('setObjects', objects);
+    const blank_count = pickRandom(range(1, maxBlanks(player_count)));
+    commit('setObjects', [...objects]);
     commit('setPlayerCount', player_count);
     dispatch('prepareDistribution', blank_count);
   },
@@ -46,4 +46,8 @@ function distributePlayers(player_count, blank_count) {
   // return: [# of blanks, # of object 1, # of object 2]
   const object_count = player_count - blank_count;
   return [blank_count, ...shuffle([Math.floor(object_count / 2), Math.ceil(object_count / 2)])];
+}
+
+function maxBlanks(player_count) {
+  return Math.floor(player_count / 3);  
 }

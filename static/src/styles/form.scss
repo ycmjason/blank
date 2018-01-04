@@ -15,7 +15,7 @@ input {
     padding: $core-padding;
     border: $core-border;
     &:focus {
-      border-color: $color-highlight;
+      border-color: $color-tertiary;
     }
   }
 }

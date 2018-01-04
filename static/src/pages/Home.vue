@@ -4,9 +4,9 @@
     <input type="text" placeholder="Object 2" v-model="objects[1]">
     <select v-model="player_count">
       <option :value="0" disabled selected>NUMBER OF PLAYERS</option>
-      <option v-for="i in 8" :value="i">{{i + 4}}</option>
+      <option v-for="i in 8" :value="i + 4">{{i + 4}}</option>
     </select>
-    <button class="primary" @click="start()">Start game!</button>
+    <button class="primary" @click="start()" :disabled="!allowStart">Start game!</button>
   </main>
 </template>
 
@@ -14,9 +14,16 @@
 export default {
   data(){
     return {
-      objects: [],
+      objects: ['', ''],
       player_count: 0,
     };
+  },
+  computed: {
+    allowStart() {
+      return this.objects[0].trim() &&
+        this.objects[1].trim() && 
+        this.player_count >= 5;
+    }
   },
   methods: {
     start(){

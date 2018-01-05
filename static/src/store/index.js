@@ -9,9 +9,13 @@ const state = {
   player_count: 0,
   objects: [],
   distribution: [],
+  current_player: 0,
+  started: false,
 };
 
 const mutations = {
+  startGame: (state) => state.started = true,
+  nextPlayer: (state) => state.current_player++,
   setPlayerCount: (state, n) => state.player_count = n,
   setObjects: (state, objects) => state.objects = objects,
   setDistribution: (state, dist) => state.distribution = dist,
@@ -23,6 +27,7 @@ const actions = {
     commit('setObjects', [...objects]);
     commit('setPlayerCount', player_count);
     dispatch('prepareDistribution', blank_count);
+    commit('startGame');
   },
   prepareDistribution({ state, commit }, blank_count) {
     const objs = ['Blank', ...state.objects];

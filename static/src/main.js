@@ -14,6 +14,7 @@ const registerAll = (context, prefix) => context.keys().forEach(p => {
 });
 
 registerAll(require.context('@/components', false, /.*\.vue/), 'b');
+registerAll(require.context('@/components_presentational', false, /.*\.vue/), 'bP');
 
 new Vue({
   router,

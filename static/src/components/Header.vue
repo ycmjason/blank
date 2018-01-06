@@ -17,7 +17,7 @@ header {
   padding-top: ($core-padding * 2);
   padding-bottom: $core-padding;
   box-shadow: $core-shadow;
-  margin-bottom: ($core-margin * 2);
+  margin-bottom: $core-margin;
 
   h1 {
     margin: 0;

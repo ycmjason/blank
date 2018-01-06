@@ -27,6 +27,7 @@ export default {
   },
   methods: {
     start(){
+      if(!this.allowStart) return;
       this.$emit('start', {
         objects: this.objects,
         player_count: this.player_count

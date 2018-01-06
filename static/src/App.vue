@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-header></b-header>
+    <bl-header></bl-header>
     <section class="container">
       <router-view></router-view>
-      <b-footer></b-footer>
+      <bl-footer></bl-footer>
     </section>
   </div>
 </template>

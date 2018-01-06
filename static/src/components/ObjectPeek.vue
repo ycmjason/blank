@@ -1,5 +1,11 @@
 <template>
-  <b-p-object-peek :obj="distribution[current_player]" @peeked="nextPlayer"></b-p-object-peek>
+  <div>
+    <h2>Please pass to Player {{current_player + 1}}</h2>
+    <p class="message">Tap on the section below to reveal your object.</p>
+    <bl-p-object-peek :obj="distribution[current_player]" @peeked="nextPlayer"></bl-p-object-peek>
+    <bl-back v-if="current_player > 0"></bl-back>
+    <bl-next-game v-else></bl-next-game>
+  </div>
 </template>
 
 <script>

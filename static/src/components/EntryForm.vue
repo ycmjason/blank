@@ -1,5 +1,5 @@
 <template>
-  <b-p-entry-form @start="(settings) => startGame(settings)"></b-p-entry-form>
+  <bl-p-entry-form @start="(settings) => startGame(settings)"></bl-p-entry-form>
 </template>
 
 <script>

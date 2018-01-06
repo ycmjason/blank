@@ -5,17 +5,23 @@ import { flatten, pickRandom, repeat, range, shuffle } from '@/utils/array';
 
 Vue.use(Vuex);
 
-const state = {
+const initial_state = {
+  current_player: 0,
   player_count: 0,
   objects: [],
   distribution: [],
-  current_player: 0,
   started: false,
 };
 
+const state = {
+  ...initial_state
+};
+
 const mutations = {
+  nextGame: (state) => Object.assign(state, initial_state),
   startGame: (state) => state.started = true,
   nextPlayer: (state) => state.current_player++,
+  prevPlayer: (state) => state.current_player = Math.max(0, state.current_player - 1),
   setPlayerCount: (state, n) => state.player_count = n,
   setObjects: (state, objects) => state.objects = objects,
   setDistribution: (state, dist) => state.distribution = dist,

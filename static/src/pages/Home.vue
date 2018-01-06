@@ -1,7 +1,8 @@
 <template>
   <main>
-    <b-entry-form v-if="!started"></b-entry-form>
-    <b-object-peek v-if="started"></b-object-peek>
+    <bl-entry-form v-if="!started"></bl-entry-form>
+    <bl-object-peek v-else-if="current_player < player_count"></bl-object-peek>
+    <bl-master-peek v-else></bl-master-peek>
   </main>
 </template>
 
@@ -9,7 +10,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  computed: mapState(['started']),
+  computed: mapState(['started', 'current_player', 'player_count']),
 }
 </script>
 

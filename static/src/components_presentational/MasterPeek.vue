@@ -1,18 +1,20 @@
 <template>
   <main>
-    <bl-p-peek @peeked="$emit('peeked')">
-      <div class="object">{{obj}}</div>
+    <bl-p-peek>
+      <ol>
+        <li class="object" v-for="obj in distribution">
+          {{obj}}
+        </li>
+      </ol>
     </bl-p-peek>
   </main>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
-
 export default {
   props: {
-    obj: {
-      type: String,
+    distribution: {
+      type: Array,
       required: true,
     },
   },
@@ -22,15 +24,13 @@ export default {
 <style scoped lang="scss">
 @import '../styles/config.scss';
 
-$object-font-size: 5rem;
+$object-font-size: 2rem;
 
-main {
-  margin-top: $core-margin;
+.message {
   margin-bottom: $core-margin;
 }
 
 .object {
-  text-align: center;
   position: relative;
   font-size: $object-font-size;
   padding-top: $core-padding;

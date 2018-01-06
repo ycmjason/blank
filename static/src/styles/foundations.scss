@@ -1,7 +1,7 @@
 .container {
   width: 100vw;
   max-width: $core-container-max-width;
-  padding: 0 5px;
+  padding: 0 $core-padding;
   margin: 0 auto;
 }
 
@@ -11,4 +11,9 @@ a {
   &:hover {
     color: lighten($color-tertiary, 15%);
   }
+}
+
+p {
+  margin-top: $core-margin;
+  margin-bottom: $core-margin;
 }

@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: require('@/pages/Home.vue').default },
+  { path: '/howto', component: require('@/pages/Howto.vue').default },
 ]
 
 export default new VueRouter({

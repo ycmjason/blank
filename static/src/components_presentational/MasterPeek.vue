@@ -23,6 +23,7 @@ export default {
 
 <style scoped lang="scss">
 @import '../styles/config.scss';
+@import '../styles/foundations.scss';
 
 $object-font-size: 2rem;
 
@@ -31,11 +32,10 @@ $object-font-size: 2rem;
 }
 
 .object {
+  @extend .break-word;
   position: relative;
   font-size: $object-font-size;
   padding-top: $core-padding;
   padding-bottom: $core-padding;
-  word-break: break-all;
-  hyphens: auto;
 }
 </style>

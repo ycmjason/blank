@@ -1,5 +1,6 @@
 <template>
   <footer>
+
     <div class="copy">2017 &copy; built with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/ycmjason/blank">Jason Yu</a></div>
   </footer>
 </template>
@@ -18,6 +19,7 @@ footer {
 .copy {
   text-align: center;
   text-transform: capitalize;  
+  margin-top: $core-margin;
 }
 
 i.fa.fa-heart {

@@ -17,3 +17,14 @@ p {
   margin-top: $core-margin;
   margin-bottom: $core-margin;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-secondary;
+  margin-top: $core-margin;
+  margin-bottom: $core-margin;
+}
+
+.break-word {
+  word-break: break-all;
+  hyphens: auto;
+}

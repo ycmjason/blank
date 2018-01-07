@@ -2,7 +2,7 @@
   <main>
     <bl-p-peek>
       <ol>
-        <li class="object" v-for="obj in distribution">
+        <li class="object" v-for="(obj, i) in distribution">
           {{obj}}
         </li>
       </ol>
@@ -27,13 +27,18 @@ export default {
 
 $object-font-size: 2rem;
 
-.message {
+main {
+  margin-top: $core-margin;
   margin-bottom: $core-margin;
+}
+
+ol {
+  padding-left: 3em;
+  margin: 0;
 }
 
 .object {
   @extend .break-word;
-  position: relative;
   font-size: $object-font-size;
   padding-top: $core-padding;
   padding-bottom: $core-padding;

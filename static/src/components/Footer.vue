@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="copy">2017 &copy; built with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/ycmjason/blank">Jason Yu</a></div>
-    <div class="version">{{version}}</div>
+    <div class="version">v{{version}}</div>
   </footer>
 </template>
 

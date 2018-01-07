@@ -3,29 +3,32 @@
     @touchstart="peek()"
     @mouseup="peeked()"
     @touchend.prevent="peeked()">
-    <div class="overlay_cloak" :class="{hide: is_down}"></div>
+    <div class="overlay_cloak" :class="{hide: !cloaked}"></div>
     <slot></slot>
   </main>
 </template>
 
 <script>
 export default {
+  props: {
+    recloak: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data(){
     return {
-      is_down: false,
+      cloaked: true,
     };
   },
   methods: {
     peek(){
-      console.log('down');
-      if(this.is_down) return;
-      this.is_down = true;
+      this.cloaked = false;
       this.$emit('peek');
     },
     peeked(){
-      console.log('up');
-      if(!this.is_down) return;
-      this.is_down = false;
+      if(!this.recloak) return;
+      this.cloaked = true;
       this.$emit('peeked');
     },
   },

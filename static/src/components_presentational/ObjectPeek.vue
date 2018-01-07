@@ -1,6 +1,6 @@
 <template>
   <main>
-    <bl-p-peek @peeked="$emit('peeked')">
+    <bl-p-peek @peek="$emit('peek')">
       <div class="object">{{obj}}</div>
     </bl-p-peek>
   </main>

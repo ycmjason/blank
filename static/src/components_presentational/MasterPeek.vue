@@ -1,6 +1,6 @@
 <template>
   <main>
-    <bl-p-peek>
+    <bl-p-peek @peeked="$emit('peeked')" recloak>
       <ol>
         <li class="object" v-for="(obj, i) in distribution">
           {{obj}}

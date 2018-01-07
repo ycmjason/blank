@@ -7,8 +7,6 @@
 import { mapState } from 'vuex';
 import howtomd from './Howto.md';
 
-console.log(howtomd);
-
 export default {
   data(){
     return {

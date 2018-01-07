@@ -12,7 +12,7 @@ Blank player(s) win by not being uncovered after 3 - 5 rounds.
 ### Assignment phase
 At the assigning phase, the game master type in two objects and the number of players into the form on the [homepage](/).
 
-Then the game master pass the screen to the left/right. Players got assigned identities by tapping and holding on the coloured section. Release the tap after reading it. Then pass the screen on to the next player and so on.
+Then the game master pass the screen to the left/right. Players got assigned identities by tapping on the coloured section. Tap on next player after reading it. Then pass the screen on to the next player and so on.
 
 After every player being assigned an identity, pass the screen back to the game master. The game master can now secretly tap on the coloured section to see the identity distribution.
 

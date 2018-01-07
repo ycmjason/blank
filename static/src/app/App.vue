@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <main>
     <bl-header></bl-header>
+
     <section class="container">
       <router-view></router-view>
       <bl-footer></bl-footer>
     </section>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -18,15 +18,9 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/config.scss';
 
-footer {
-  margin-top: $core-margin * 2;
-  margin-bottom: $core-margin;
-}
-
 .copy {
   text-align: center;
   text-transform: capitalize;  
-  margin-top: $core-margin;
   margin-bottom: $core-margin;
 }
 

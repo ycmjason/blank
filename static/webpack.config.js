@@ -7,6 +7,7 @@ const OfflinePlugin = require('offline-plugin');
 
 const assets_to_be_copied = [
   'index.html',
+  'favicon.png',
   'manifest.json',
   'assets',
 ].map(v => ({ from: v, to: v}));

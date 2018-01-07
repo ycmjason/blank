@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import VueAnalytics, { onAnalyticsReady } from 'vue-analytics'
+import VueAnalytics from 'vue-analytics'
+import { install as OfflinePluginInstall } from 'offline-plugin/runtime';
 
 import router from '@/router';
 import store from '@/store';
@@ -39,10 +40,11 @@ const registerAll = (context, prefix) => context.keys().forEach(p => {
 registerAll(require.context('@/components', false, /.*\.vue/), 'bl');
 registerAll(require.context('@/components_presentational', false, /.*\.vue/), 'blP');
 
-const RootApp = new Vue({
+new Vue({
   router,
   store,
+  el: '#app',
   render: h => h(App)
 })
 
-onAnalyticsReady().then(() => RootApp.$mount('#app'));
+OfflinePluginInstall();

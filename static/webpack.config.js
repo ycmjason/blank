@@ -1,12 +1,32 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
+
+const assets_to_be_copied = [
+  'index.html',
+  'manifest.json',
+  'assets',
+].map(v => ({ from: v, to: v}));
+
+const web_external_files = [
+  'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css',
+  'https://fonts.googleapis.com/css?family=Cinzel|Quicksand',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0',
+];
 
 module.exports = {
-  entry: './src/main.js',
+  context: path.resolve(__dirname, 'src'),
+  entry: './app/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -42,10 +62,21 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new CopyWebpackPlugin(assets_to_be_copied, {
+      ignore: ['.*'], // ignore hidden files 
+    }),
+    new OfflinePlugin({
+      appShell: '/',
+      externals: web_external_files,
+      version: require('../package.json').version,
+    })
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, './src/'),
+      '@': path.resolve(__dirname, 'src/app'),
     }
   },
   devServer: {

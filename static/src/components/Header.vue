@@ -1,7 +1,7 @@
 <template>
   <header>
     <section class="container">
-      <h1><a href="/">Blank</a></h1>
+      <h1>Blank</h1>
       <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/howto">How to play?</router-link></li>
@@ -19,7 +19,7 @@ export default { }
 
 header {
   background-color: $color-primary;
-  padding-top: ($core-padding * 2);
+  padding-top: $core-padding;
   padding-bottom: $core-padding;
   box-shadow: $core-shadow;
   margin-bottom: $core-margin;
@@ -27,20 +27,21 @@ header {
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 h1 {
   margin: 0;
-  a {
-    color: $color-foreground;
-  }
 }
 
 ul {
   padding: 0;
-  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
   display: flex;
   justify-content: space-between;
 

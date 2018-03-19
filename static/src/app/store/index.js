@@ -18,7 +18,7 @@ const state = {
 };
 
 const mutations = {
-  newGame: (state) => Object.assign(state, initial_state),
+  newGame: (state) => Object.assign(state, initial_state, { player_count: state.player_count }),
   startGame: (state) => state.started = true,
   nextPlayer: (state) => state.current_player++,
   prevPlayer: (state) => state.current_player = Math.max(0, state.current_player - 1),

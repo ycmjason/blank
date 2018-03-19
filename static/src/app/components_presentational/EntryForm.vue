@@ -12,10 +12,16 @@
 
 <script>
 export default {
+  props: {
+    playerCount: {
+      type: Number,
+      default: 0,
+    },
+  },
   data(){
     return {
       objects: ['', ''],
-      player_count: 0,
+      player_count: this.playerCount,
     };
   },
   computed: {
